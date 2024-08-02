@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All in One Finance</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>All in One Finance</h1>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">All in One Finance</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showHome()">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showAbout()">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showServices()">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showContact()">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showRegister()">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showLogin()">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="home" class="content">
+            <div class="hero bg-info text-white text-center py-5">
+                <h1>The All in One Financial Platform</h1>
+                <p>We believe in Minimalism. Less is More.</p>
+                <button class="btn btn-light btn-lg" onclick="showLogin()">Login using E-KYC</button>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/images/service1.jpg" class="card-img-top" alt="Banking Service">
+                        <div class="card-body">
+                            <h5 class="card-title">Banking Service</h5>
+                            <p class="card-text">We offer a wide range of banking services to meet your financial needs.</p>
+                            <button class="btn btn-info" onclick="showServiceDetails('banking')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/images/service2.jpg" class="card-img-top" alt="Client Testimonials">
+                        <div class="card-body">
+                            <h5 class="card-title">Client Testimonials</h5>
+                            <p class="card-text">Our clients love us! Read what they have to say about our services.</p>
+                            <button class="btn btn-info" onclick="showServiceDetails('testimonials')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Our Services</h5>
+                            <ul class="list-unstyled">
+                                <li>Banking Services</li>
+                                <li>Investment Management</li>
+                                <li>Budgeting Tools</li>
+                                <li>Loan Management</li>
+                                <li>Credit Monitoring</li>
+                                <li>Insurance Services</li>
+                                <li>Tax Services</li>
+                                <li>Financial Planning</li>
+                                <li>Payment Solutions</li>
+                                <li>Customer Support</li>
+                            </ul>
+                            <button class="btn btn-info" onclick="showServices()">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="login" class="content" style="display:none;">
+            <div class="row justify-content-center my-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header text-center">Login</div>
+                        <div class="card-body">
+                            <form action="/login" method="post">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="register" class="content" style="display:none;">
+            <div class="container">
+                <h2 class="text-center my-5">Register</h2>
+                <form action="/register" method="post" enctype="multipart/form-data" class="w-50 mx-auto">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile_picture">Profile Picture</label>
+                        <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+                <div class="mt-3 text-center">
+                    <a href="#" onclick="showLogin()" class="btn btn-secondary">Already have an account? Login here</a>
+                </div>
+            </div>
+        </div>
+        <div id="services" class="content" style="display:none;">
+            <h2 class="text-center my-5">Our Services</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Banking Services</h3>
+                    <p>We offer a full suite of banking services including checking and savings accounts, online banking, and mobile banking apps. Our secure and user-friendly platform ensures that you have access to your finances anytime, anywhere.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('banking')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Investment Management</h3>
+                    <p>Our expert financial advisors provide personalized investment strategies to help you grow your wealth. We offer a range of investment options including stocks, bonds, mutual funds, and retirement accounts.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('investment')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Budgeting Tools</h3>
+                    <p>Our comprehensive budgeting tools help you track your expenses, set savings goals, and manage your financial health. Get insights into your spending habits and make informed decisions to improve your financial stability.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('budgeting')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Loan Management</h3>
+                    <p>We provide loan management services for personal loans, home loans, auto loans, and more. Our team helps you find the best loan options, manage your payments, and keep your debt under control.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('loan')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Credit Monitoring</h3>
+                    <p>Stay on top of your credit score with our credit monitoring services. Receive alerts about changes to your credit report, track your credit health, and get tips on how to improve your credit score.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('credit')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Insurance Services</h3>
+                    <p>Protect yourself and your family with our comprehensive insurance services. We offer health insurance, life insurance, auto insurance, and home insurance plans tailored to meet your needs and budget.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('insurance')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Tax Services</h3>
+                    <p>Our tax services ensure that you are always compliant with the latest tax laws. We provide tax planning, preparation, and filing services to help you minimize your tax liability and maximize your returns.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('tax')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Financial Planning</h3>
+                    <p>Our financial planners work with you to create a personalized financial plan that aligns with your goals. Whether you're saving for retirement, planning for education, or managing your estate, we provide expert advice and support every step of the way.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('financial-planning')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Payment Solutions</h3>
+                    <p>We offer a variety of payment solutions including digital wallets, mobile payments, and international money transfers. Our secure and convenient payment methods ensure that your transactions are fast and hassle-free.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('payment')">Learn More</button>
+                </div>
+                <div class="col-md-6">
+                    <h3>Customer Support</h3>
+                    <p>Our dedicated customer support team is here to help you with all your financial needs. Whether you have a question about your account, need technical assistance, or want to learn more about our services, we're just a call or click away.</p>
+                    <button class="btn btn-info" onclick="showServiceDetails('support')">Learn More</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/" class="btn btn-primary">Home</a>
+            </div>
+        </div>
+        <div id="about" class="content" style="display:none;">
+            <div class="container my-5">
+                <h2>About Us</h2>
+                <p>All in One Finance is dedicated to providing comprehensive financial services that cater to all your needs. Our mission is to help you manage your finances effectively, offering tools and services for budgeting, investment management, savings, and more.</p>
+                <p>We believe in minimalism and simplicity, ensuring that our platform is user-friendly and accessible. Whether you're managing daily expenses or planning for your future, All in One Finance is here to support you every step of the way.</p>
+                <h3>Our Values</h3>
+                <ul>
+                    <li>Transparency</li>
+                    <li>Integrity</li>
+                    <li>Customer-Centricity</li>
+                    <li>Innovation</li>
+                </ul>
+                <h3>Our Team</h3>
+                <p>Our team consists of experienced professionals in finance, technology, and customer service, all working together to deliver the best financial solutions for you.</p>
+            </div>
+        </div>
+        <div id="contact" class="content" style="display:none;">
+            <div class="container my-5">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need further information, please feel free to contact us. Our customer support team is here to help you with all your financial needs.</p>
+                <form action="/contact" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <h3 class="mt-5">Our Address</h3>
+                <p>123 Finance Avenue, Suite 100<br>Finance City, FC 12345<br>Phone: (123) 456-7890<br>Email: support@allinonefinance.com</p>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-primary text-white text-center py-3">
+        &copy; 2024 All in One Finance. All rights reserved.
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        function showHome() {
+            hideAll();
+            document.getElementById('home').style.display = 'block';
+        }
+
+        function showLogin() {
+            hideAll();
+            document.getElementById('login').style.display = 'block';
+        }
+
+        function showRegister() {
+            hideAll();
+            document.getElementById('register').style.display = 'block';
+        }
+
+        function showServices() {
+            hideAll();
+            document.getElementById('services').style.display = 'block';
+        }
+
+        function showAbout() {
+            hideAll();
+            document.getElementById('about').style.display = 'block';
+        }
+
+        function showContact() {
+            hideAll();
+            document.getElementById('contact').style.display = 'block';
+        }
+
+        function hideAll() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('register').style.display = 'none';
+            document.getElementById('services').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+        }
+
+        function showServiceDetails(service) {
+            alert(`More details about ${service} coming soon!`);
+        }
+    </script>
+</body>
+</html>
